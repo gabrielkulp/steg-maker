@@ -17,12 +17,22 @@ a, a:not(.button):visited {
 	transition: var(--transition);
 }
 
-a:hover, a:focus, a:active {
+a:hover, a:not(.button):focus, a:active {
 	color: var(--accent-hover-color);
 }
 
+a.button {
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	width: 45%;
+	margin-left: auto;
+	margin-right: auto;
+	-webkit-transition: var(--transition);
+	transition: var(--transition);
+}
 
-a.button:hover {
+a.button:hover, a.button:focus {
 	color: var(--button-color);
 	background-color: var(--accent-hover-color);
 }
