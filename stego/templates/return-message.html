@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Fetch{% endblock %}
+
+{% block header %}
+	<h1>Extract a Message from a Picture</h1>
+{% endblock %}
+
+{% block content %}
+	<p>This is the message that was hidden in that picture:</p>
+	<div class="card">
+		{{ message }}
+	</div>
+	<p><a href="{{ url_for('views.home') }}"><< Return home</a></p>
+{% endblock %}

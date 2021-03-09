@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Error{% endblock %}
+
+{% block header %}
+	<h1>Uh oh!</h1>
+{% endblock %}
+
+{% block content %}
+	<p>An error occurred. Sorry about that! Here's what might have happened:</p>
+	<div class="card">
+		{{ message }}
+	</div>
+	<a href="javascript:history.back()"><< Try again</a>
+	{% endblock %}

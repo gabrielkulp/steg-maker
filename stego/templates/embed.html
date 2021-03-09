@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Embed{% endblock %}
+
+{% block header %}
+	<h1>Hide a Message in a Picture</h1>
+{% endblock %}
+
+{% block content %}
+	<p>Here's a place where you can upload a file, message, and passphrase, and mash them all together. Be sure to choose a strong passphrase; if someone can't guess it, they won't be able to tell that there's a message at all!</p>
+	<form class="card" action="{{ url_for('views.embed') }}" method="post" enctype="multipart/form-data">
+		<p>
+			<label for="file">Image to embed the message in</label>
+			<input class="form-control" id="upload" type="file" name="file" required="required">
+		</p>
+
+		<p>
+			<label for="message">Message to hide</label>
+			<textarea name="message" rows="4" cols="50" placeholder="Type message here..." required="required"></textarea>
+		</p>
+
+		<p>
+			<label for="passphrase">Passphrase to secure the message</label>
+			<input type="password" name="passphrase" placeholder="Type passphrase here..." required="required">
+		</p>
+
+		<p class="container">
+			<label for="submit">When you're ready:</label>
+			<input type="submit" value="Embed">
+		</p>
+	</form>
+	<p><a href="{{ url_for('views.home') }}"><< Return home</a></p>
+{% endblock %}

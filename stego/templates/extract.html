@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Extract{% endblock %}
+
+{% block header %}
+	<h1>Extract a Message from a Picture</h1>
+{% endblock %}
+
+{% block content %}
+	<p>Here's a place where you can upload a file and password and try to get a message out. If you don't know the password, there's no way to know that there's any message in there at all!</p>
+	<form class="card" action="{{ url_for('views.extract') }}" method="post" enctype="multipart/form-data">
+		<p>
+			<label for="file">Image to get the message from</label>
+			<input class="form-control" id="upload" type="file" name="file" required="required">
+		</p>
+
+		<p>
+			<label for="file">Passphrase to search the image with</label>
+			<input type="password" name="passphrase" placeholder="Passphrase" required="required">
+		</p>
+
+		<p class="container">
+			<label for="submit">When you're ready:</label>
+			<input type="submit" value="Extract">
+		</p>
+	</form>
+	<p><a href="{{ url_for('views.home') }}"><< Return home</a></p>
+{% endblock %}

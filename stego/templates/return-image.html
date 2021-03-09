@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Fetch{% endblock %}
+
+{% block header %}
+	<h1>Hide a Message in a Picture</h1>
+{% endblock %}
+
+{% block content %}	
+	<p>Here's your picture with a thing hidden in it! Right-click or long-press to download (a screenshot won't work). Then you can save it somewhere or send it to a friend. Anyone can upload it here to extract your message <em>if they know the password!</em></p>
+	<img src="{{ url_for('views.download', filename=filename) }}" alt="">
+	<p><a href="{{ url_for('views.home') }}"><< Return home</a></p>
+{% endblock %}
