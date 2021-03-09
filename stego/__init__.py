@@ -32,7 +32,6 @@ def create_app():
 	from . import views
 	app.register_blueprint(views.bp)
 	app.add_url_rule("/", endpoint="home")
-	app.add_url_rule("/home", endpoint="home")
 	app.add_url_rule("/embed", endpoint="embed")
 	app.add_url_rule("/extract", endpoint="extract")
 	app.add_url_rule("/return-image", endpoint="return_image")

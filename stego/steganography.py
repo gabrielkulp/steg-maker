@@ -16,13 +16,13 @@ def embed(filename, message, passphrase, out_dir):
 	else:
 		print("Something went wrong with steghide:", p.stderr)
 		if "file format" in p.stderr:
-			raise RuntimeError("File contents was not as expected")
+			raise RuntimeError("File format did not match extension")
 		return None
 
 
 def extract(filename, passphrase):
 	tmp_file = subprocess.run(["mktemp"], encoding="utf-8", capture_output=True).stdout.strip()
-	print("temp file:", tmp_file)
+	#print("temp file:", tmp_file)
 
 	p = subprocess.run(["steghide", "extract", "--stegofile", filename, "--extractfile", tmp_file, "--force", "--passphrase", passphrase], encoding="utf-8", capture_output=True)
 

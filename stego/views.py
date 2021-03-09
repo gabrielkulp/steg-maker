@@ -10,7 +10,6 @@ from . import steganography
 bp = Blueprint('views', __name__)
 
 @bp.route("/")
-@bp.route("/home")
 def home():
 	return render_template("home.html")
 
@@ -74,7 +73,8 @@ def extract():
 			abort(500)
 
 	if not message:
-		return render_template("error.html", message="bad extract")
+		msg = "Message extraction didn't work for some reason..."
+		return render_template("error.html", message=msg)
 
 	return render_template("return-message.html", message=message)
 

@@ -3,14 +3,14 @@
 {% block title %}Embed{% endblock %}
 
 {% block header %}
-	<h1>Hide a Message in a Picture</h1>
+	<h1>Embed a Message in a Picture</h1>
 {% endblock %}
 
 {% block content %}
 	<p>Here's a place where you can upload a file, message, and passphrase, and mash them all together. Be sure to choose a strong passphrase; if someone can't guess it, they won't be able to tell that there's a message at all!</p>
 	<form class="card" action="{{ url_for('views.embed') }}" method="post" enctype="multipart/form-data">
 		<p>
-			<label for="file">Image to embed the message in</label>
+			<label for="file">JPG or PNG to embed the message in</label>
 			<input class="form-control" id="upload" type="file" name="file" required="required">
 		</p>
 
